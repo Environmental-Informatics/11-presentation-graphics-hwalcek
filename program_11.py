@@ -113,7 +113,7 @@ if __name__ == '__main__':
     plt.legend(loc=(1.04,0))
     plt.ylabel('Discharge (cfs)')
     plt.xlabel('Time')
-    plt.savefig('daily_flow.png', bbox_inches="tight")
+    plt.savefig('daily_flow.png', bbox_inches="tight", dpi = 96)
     plt.close()
     
     #create annual dataframe
@@ -123,31 +123,31 @@ if __name__ == '__main__':
     #annual coefficient of variation
     for name, data in annual:
         plt.scatter(data.index.values, data['Coeff Var'].values, label=riverName[name], color=color[name], marker = 'o', alpha=.6)
-    plt.title('Coefficient of Variation for the Last 5 Years of Record')
+    plt.title('Coefficient of Variation for Tippecanoe River and Wildcat Creek')
     plt.legend(loc=(1.04,0))
     plt.ylabel('Coefficient of Variation')
     plt.xlabel('Time')
-    plt.savefig('coeff_var.png', bbox_inches = 'tight')
+    plt.savefig('coeff_var.png', bbox_inches = 'tight', dpi = 96)
     plt.close()
     
     #annual TQmean
     for name, data in annual:
         plt.scatter(data.index.values, data['Tqmean'].values, label=riverName[name], color=color[name], marker = 'o', alpha=.6)
-    plt.title('TQmean for the Last 5 Years of Record')
+    plt.title('TQ Mean for Tippecanoe River and Wildcat Creek')
     plt.legend(loc=(1.04,0))
-    plt.ylabel('TQmean')
+    plt.ylabel('TQ Mean')
     plt.xlabel('Time')
-    plt.savefig('tqmean.png', bbox_inches = 'tight')
+    plt.savefig('tqmean.png', bbox_inches = 'tight', dpi = 96)
     plt.close()
     
     #annual R-B Index
     for name, data in annual:
         plt.scatter(data.index.values, data['R-B Index'].values, label=riverName[name], color=color[name], marker = 'o', alpha=.6)
-    plt.title('R-B Index for the Last 5 Years of Record')
+    plt.title('R-B Index for Tippecanoe River and Wildcat Creek')
     plt.legend(loc=(1.04,0))
     plt.ylabel('R-B Index')
     plt.xlabel('Time')
-    plt.savefig('r-b_index.png', bbox_inches = 'tight')
+    plt.savefig('r-b_index.png', bbox_inches = 'tight', dpi = 96)
     plt.close()
         
     #thank you to Avnika for help with the last couple of calculations!
@@ -168,10 +168,10 @@ if __name__ == '__main__':
         #plot values
         plt.plot(MonthlyAverages.index.values, MonthlyAverages['Mean Flow'].values, label=riverName[name], color=color[name], alpha=.6)
     plt.legend(loc=(1.04,0))
-    plt.title('Average Annual Monthly Flow')
+    plt.title('Average Annual Monthly Flow for Tippecanoe River and Wildcat Creek')
     plt.ylabel('Discharge (cfs)')
     plt.xlabel('Month')
-    plt.savefig('annual_monthly_flow.png', bbox_inches = 'tight')
+    plt.savefig('annual_monthly_flow.png', bbox_inches = 'tight', dpi = 96)
     plt.close()
     
     #return period of annual peak flow events
@@ -189,10 +189,10 @@ if __name__ == '__main__':
         # Plot the exceedance probability
         plt.scatter(weibull, flow['Peak Flow'],label=riverName[name], color=color[name], marker='o', alpha=.6)
     plt.legend(loc=(1.04,0))
-    plt.title('Return Period of Annual Peak Flow Events')
+    plt.title('Return Period of Annual Peak Flow Events for Tippecanoe River and Wildcat Creek')
     plt.ylabel('Peak Discharge (cfs)')
     plt.xlabel('Exceedance Probability (%)')
-    plt.savefig('return_period.png', bbox_inches = 'tight')
+    plt.savefig('return_period.png', bbox_inches = 'tight', dpi = 96)
     plt.close()
     
     
